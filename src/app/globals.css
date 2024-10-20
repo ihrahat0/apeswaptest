@@ -3,25 +3,34 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@font-face {
+  font-family: 'DM Sans Regular';
+  src: url('https://app.tangleswap.exchange/static/media/DMSans-Regular.4ee96395e07a04577aab.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CabinetGrotesk Bold';
+  src: url('https://app.tangleswap.exchange/static/media/CabinetGrotesk-Bold.049721aa3e601711db60.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CabinetGrotesk Medium';
+  src: url('https://app.tangleswap.exchange/static/media/CabinetGrotesk-Medium.06e4535179580983658a.ttf') format('truetype');
+}
+body {
+  font-family: 'DM Sans Regular', sans-serif;
+  background-color: #000000;
 }
